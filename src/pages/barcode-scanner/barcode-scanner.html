@@ -1,0 +1,45 @@
+<!--
+  Generated template for the BarcodeScannerPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar>
+    <ion-title>Barcode Scanner 1.2</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+
+  <ion-fab  center center *ngIf="!touchIDNotAvailable">
+    <button ion-fab color="dark" (click)="scan()">
+      <ion-icon name="qr-scanner"></ion-icon>
+    </button>
+  </ion-fab>
+  <ion-card *ngIf="touchIDNotAvailable">
+
+    <ion-card-header>
+      Not Supported
+    </ion-card-header>
+    <ion-card-content>
+      Scanner is not supported in this device
+    </ion-card-content>
+  </ion-card>
+  <ion-card *ngIf="productFound">
+    <img src="../assets/imgs/phones/{{selectedProduct.imageUrl}}" alt="{{selectedProduct.imageUrl}}" />
+    <ion-card-content>
+      <ion-card-title>
+        {{selectedProduct.name}}
+      </ion-card-title>
+      <p>
+        {{selectedProduct.snippet}}
+      </p>
+    </ion-card-content>
+  </ion-card>
+  <ion-card *ngIf="productNotFound">
+    <p>Data : {{barcodeData}}</p>
+    <p>Format : {{barcodeDataFormat}}</p>
+  </ion-card>
+</ion-content>

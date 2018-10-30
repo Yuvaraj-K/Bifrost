@@ -1,0 +1,7 @@
+{
+  "name": "bifrost",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular"
+}

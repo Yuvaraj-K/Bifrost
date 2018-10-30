@@ -1,0 +1,28 @@
+<ion-header>
+      <ion-title>Login 0.2.3</ion-title>    
+  </ion-header> 
+  <ion-content>   
+      <form (ngSubmit)="submit()" [formGroup]="loginForm">
+          <ion-list>
+              <ion-item>
+                <ion-label fixed >Username</ion-label>
+                <ion-input type="text" formControlName="username"></ion-input>
+              </ion-item>            
+              <ion-item>
+                <ion-label fixed>Password</ion-label>
+                <ion-input type="password"  formControlName="password"></ion-input>
+              </ion-item>
+              <div padding text-center>
+                  <button ion-button color="primary">Sign In</button>
+                </div>
+            </ion-list>
+        </form>
+       
+    <ion-row *ngIf="fingerPrintAvailable" class="login-row" >
+        <ion-item align-items-center>
+            <ion-icon name="finger-print" item-start></ion-icon>   
+            <ion-label >Use Touch ID</ion-label>
+            <ion-toggle [(ngModel)]="touchChecked" (ionChange)="notify($event)"></ion-toggle>
+        </ion-item>
+    </ion-row>
+  </ion-content>
