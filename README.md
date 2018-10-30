@@ -1,3 +1,11 @@
+https://www.djamware.com/post-sub-category/5845691a80aca7763489d872/ionic-framework
+
+and 
+
+https://www.techiediaries.com/ionic/
+
+
+
 step :1 
 
 Run "npm install"
